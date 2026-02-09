@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Hoca Sevenler Birliği</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #2d2d2d;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid #4CAF50;
+            max-width: 500px;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .vote-btn {
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+        .like-btn { background-color: #4CAF50; }
+        .dislike-btn { background-color: #f44336; }
+        
+        .vote-btn:hover { transform: scale(1.05); opacity: 0.9; }
+        .vote-btn:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .counter-box {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        #count, #discount { color: #4CAF50; }
+        #discount { color: #f44336; }
+        
+        .mangal-notu {
+            margin-top: 25px;
+            padding: 10px;
+            border-top: 1px dashed #555;
+            color: #ffeb3b;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        .msg {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #ffeb3b;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Muhammed Hoca Sevenler Birliği</h1>
+    <p>Hocamızı sevenler (ve sevmeyenler) buraya!</p>
+    
+    <div class="btn-group">
+        <button class="vote-btn like-btn" id="likeBtn" onclick="sendVote('like')">❤️ Sevenler</button>
+        <button class="vote-btn dislike-btn" id="dislikeBtn" onclick="sendVote('dislike')">💔 Sevmeyenler</button>
+    </div>
+    
+    <div class="counter-box">
+        Seven: <span id="count">0</span> | Sevmeyen: <span id="discount">0</span>
+    </div>
+
+    <div class="mangal-notu">
+        🔥 Yarın mangal var!
+    </div>
+
+    <p id="thanksMsg" class
